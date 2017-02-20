@@ -41,12 +41,12 @@ func (g *Group) EnableBackoff() {
 	g.canbackoff = true
 }
 
-// SetWriter can set the io.Writer when there is an error in the RetryGo
+// SetWriter can set the io.Writer when there is an error in the RetryGo.
 func (g *Group) SetWriter(out io.Writer) {
 	g.w = out
 }
 
-// Wait blocks until all function calls from the Go method have returned.
+// Wait blocks until all function calls from the RetryGo method have returned.
 func (g *Group) Wait() {
 	g.wg.Wait()
 	if g.cancel != nil {
